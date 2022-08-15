@@ -18,10 +18,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('main.main');
     });
-    Route::group(['prefix' => 'products'], function () {
-        Route::get('/', function () {
-            return view('main.product.index');
-        });
-    });
+//    Route::group(['prefix' => 'products'], function () {
+//        Route::get('/', function () {
+//            return view('main.product.index');
+//        });
+//    });
 
 });
