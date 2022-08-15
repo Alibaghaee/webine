@@ -14,7 +14,7 @@ class ProductIndex extends Component
 
     public function render()
     {
-        $products = Product::orderBy('updated_at')
+        $products = Product::orderByDesc('updated_at')
             ->paginate(3);
 
         return view('livewire.admin.product-index',

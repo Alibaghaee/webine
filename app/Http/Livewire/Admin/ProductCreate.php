@@ -35,7 +35,7 @@ class ProductCreate extends Component
         } catch (\Exception $e) {
             $this->result = false;
         }
-
+        $this->reset(['description','title']);
         $this->title = '';
         $this->description = '';
     }

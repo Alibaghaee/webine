@@ -1,8 +1,7 @@
 <div>
 
 
-
-    <table class="table table-report -mt-2">
+    <table class="table table-report   ">
         <thead>
         <tr>
 
@@ -17,20 +16,20 @@
 
             @forelse($products as $product)
 
-            <tr class="intro-x">
+                <tr class="intro-x">
                     <td>
                         <p class="font-medium whitespace-no-wrap">{{$product->title}}</P>
                     </td>
 
                     <td>
-                        <p class="font-medium whitespace-no-wrap">{{  mb_substr($product->description,0,20,'utf-8')}}</P>
+                        <p class="font-medium whitespace-no-wrap">{!!  mb_substr($product->description,0,20,'utf-8') !!}</P>
                     </td>
 
 
                     @if($product->status === 'published')
                         <td>
                             <div class="flex items-center justify-center
-                            text-theme-6"><i data-feather="check-square"
+                            text-red-600"><i data-feather="check-square"
                                              class="w-4 h-4 mr-2"></i>
                                 منتشر نشده
                             </div>
@@ -38,22 +37,23 @@
                         </td>
                     @else
                         <td>
-                            <div class="flex items-center justify-center text-theme-9"><i data-feather="check-square"
-                                                                                          class="w-4 h-4 mr-2"></i>
+                            <div class="flex items-center justify-center text-blue-700">
+                                <i data-feather="check-square"
+                  class="w-4 h-4 mr-2"></i>
                                 منتشر شده
                             </div>
 
                         </td>
                     @endif
 
-                    <td class="table-report__action w-56">
+                    <td class="table-report__action w-56 text-blue-700">
                         <div class="flex justify-center items-center">
                             <a class="flex items-center mr-3" href="{{route('admin.product.show',$product->id)}}"> <i
                                     data-feather="codesandbox" class="w-4 h-4 mr-1"></i> نمایش </a>
 
                             <a class="flex items-center mr-3" href="{{route('admin.product.edit',$product->id)}}"> <i
                                     data-feather="check-square" class="w-4 h-4 mr-1"></i> ویرایش </a>
-                            <a class="flex items-center text-theme-6" href="#" data-toggle="modal"
+                            <a class="flex items-center " href="#" data-toggle="modal"
                                data-target="#delete-confirmation-modal"> <i data-feather="trash-2"
                                                                             class="w-4 h-4 mr-1"></i>
                                 <form action="{{ route('admin.product.delete',$product->id) }}" method="POST">
@@ -83,11 +83,12 @@
                 </td>
             @endforelse
 
-            <div>
-                {{ $products->links()}}
-            </div>
 
         </div>
         </tbody>
+        <div>
+            {{ $products->links()}}
+        </div>
+
     </table>
 </div>

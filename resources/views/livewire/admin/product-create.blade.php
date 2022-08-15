@@ -9,7 +9,7 @@
     <div class="pos intro-y grid grid-cols-12 gap-5 mt-5" dir="rtl">
         <!-- BEGIN: Post Content -->
 
-        <div class="intro-y col-span-12 lg:col-span-8 p-4">
+        <div class="intro-y col-span-12 lg:col-span-8 p-4 w-2/4 ">
             <form data-single="true"
                   wire:submit.prevent="productForm"
                   method="POST"
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="mt-5">
                                     <div wire:ignore class="form-group row">
-                                        <textarea wire:model="description"
+                                        <textarea wire:model.defer="description"
                                                   class="form-control required" name="description"
                                                   id="description"></textarea>
                                     </div>
@@ -61,11 +61,12 @@
         </div>
 
     </div>
+    @livewire('admin.product-index')
 </div>
 <script src="https://cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
 <script>
     const editor = CKEDITOR.replace('description');
-    editor.on('change', function(event){
+    editor.on('change', function (event) {
         console.log(event.editor.getData())
     @this.set('description', event.editor.getData());
     })
