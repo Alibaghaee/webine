@@ -12,6 +12,11 @@ class ProductIndex extends Component
 
     protected $paginationTheme = 'tailwind';
 
+    public function deleteProduct($id)
+    {
+        Product::find($id)->delete();
+    }
+
     public function render()
     {
         $products = Product::orderByDesc('updated_at')

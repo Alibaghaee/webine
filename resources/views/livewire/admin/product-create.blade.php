@@ -6,7 +6,7 @@
         </h2>
 
     </div>
-    <div class="pos intro-y grid grid-cols-12 gap-5 mt-5" dir="rtl">
+    <div class="pos intro-y grid grid-cols-12 gap-5 mt-5 " dir="rtl">
         <!-- BEGIN: Post Content -->
 
         <div class="intro-y col-span-12 lg:col-span-8 p-4 w-2/4 ">
