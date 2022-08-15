@@ -10,7 +10,6 @@ class Dashboard extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme = 'bootstrap';
 
     public $prudoctsCon = false;
     public $createPrudoctCon = false;

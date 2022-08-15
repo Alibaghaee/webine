@@ -1,6 +1,5 @@
 @error($field)
 
-
-<div id="emailHelp" class="form-text">{{$message}}</div>
+<div class="text-theme-6 mt-2" dir="rtl">{{$message}}</div>
 
 @enderror
