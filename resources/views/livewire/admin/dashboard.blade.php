@@ -30,5 +30,6 @@
         </div>
         @include('main.product.index')
         @include('main.product.create')
+        @include('main.product.edit')
     </div>
 </div>

@@ -20,7 +20,13 @@
                     <td>{{$product->title}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->status}}</td>
-                    <td>-</td>
+                    <td>
+                        <button type="button" class="btn btn-warning"
+                                wire:click.prevent="setProductEdit('{{$product->id}}')"
+                        >Edit</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+
+                    </td>
                 </tr>
             @empty
                 <tr>
