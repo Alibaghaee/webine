@@ -17,7 +17,10 @@
                                      wire:click.prevent="setProductIndex()"
                                 >Index
                                 </div>
-                                <div class="p-2 bg-light border">Create</div>
+                                <div class="p-2 bg-light border"
+                                     wire:click.prevent="setProductCreate()"
+                                >Create
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -26,5 +29,6 @@
             </div>
         </div>
         @include('main.product.index')
+        @include('main.product.create')
     </div>
 </div>

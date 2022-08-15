@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->mediumText('description');
-            $table->string('status');
+            $table->string('status')->default('published');
             $table->timestamps();
         });
     }
