@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('main.main');
+    });
+    Route::group(['prefix' => 'products'], function () {
+        Route::get('/', function () {
+            return view('main.product.index');
+        });
+    });
+
 });
